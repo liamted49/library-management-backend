@@ -3,6 +3,7 @@
 import { getClientPromise } from "@/lib/mongodb";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
+import { ObjectId } from "mongodb";
 
 const JWT_SECRET = process.env.JWT_SECRET || "mydefaulyjwtsecret";
 
@@ -19,7 +20,7 @@ export async function getUserFromToken() {
     const client = await getClientPromise();
     const db = client.db("library_management");
     const user = await db.collection("users").findOne(
-      { _id: decoded.id },
+      { _id: new ObjectId(decoded.id) },
       { projection: { password: 0 } }
     );
 
