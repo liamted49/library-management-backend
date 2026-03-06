@@ -1,0 +1,3 @@
+MONGODB_URI=mongodb+srv://u6722075:Liam654878@cluster0.zgvfdn9.mongodb.net/library_management
+JWT_SECRET=your_super_secret_jwt_key_here_change_this_in_production
+ADMIN_SETUP_PASS=adminsetuppass
